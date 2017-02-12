@@ -41,4 +41,21 @@ class LinkTextView: UITextView {
         return nil
     }
     
+    // Instead of overriding hitTest(_:with:), you can override point(inside:with:)
+    
+    /*
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        // Get the character index from the tap location
+        let characterIndex = layoutManager.characterIndex(for: point, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        
+        // if we detect a link, handle the tap by returning true...
+        if let _ = textStorage.attribute(NSLinkAttributeName, at: characterIndex, effectiveRange: nil) {
+            return true
+        }
+        
+        // ... otherwise return false ; the tap will go on to the next receiver
+        return false
+    }
+    */
+    
 }
